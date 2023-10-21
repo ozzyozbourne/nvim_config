@@ -79,6 +79,12 @@ _G.packer_plugins = {
     path = "/home/ozzy/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["autosave.nvim"] = {
+    config = { "\27LJ\2\n:\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\rautosave\frequire\0" },
+    loaded = true,
+    path = "/home/ozzy/.local/share/nvim/site/pack/packer/start/autosave.nvim",
+    url = "https://github.com/0x00-ketsu/autosave.nvim"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/home/ozzy/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
@@ -173,6 +179,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: autosave.nvim
+time([[Config for autosave.nvim]], true)
+try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\rautosave\frequire\0", "config", "autosave.nvim")
+time([[Config for autosave.nvim]], false)
 -- Config for: nvim-tree.lua
 time([[Config for nvim-tree.lua]], true)
 try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14nvim-tree\frequire\0", "config", "nvim-tree.lua")
