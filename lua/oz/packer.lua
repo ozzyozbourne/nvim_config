@@ -23,6 +23,10 @@ return require('packer').startup(function(use)
     use('tpope/vim-fugitive')
     use { 'elentok/format-on-save.nvim' }
     use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
+    use {
         '0x00-ketsu/autosave.nvim',
         config = function()
             require('autosave').setup {}
