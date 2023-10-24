@@ -16,31 +16,30 @@ return require('packer').startup(function(use)
 
     vim.cmd('colorscheme rose-pine')
 
+    use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     use('nvim-treesitter/playground')
     use('ThePrimeagen/harpoon')
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
-    use { 'elentok/format-on-save.nvim' }
+    use('elentok/format-on-save.nvim')
+    use('0x00-ketsu/autosave.nvim')
+    use('akinsho/toggleterm.nvim')
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
     use {
-        '0x00-ketsu/autosave.nvim',
-        config = function()
-            require('autosave').setup {}
-        end
-    }
-
-    use {
         'nvim-tree/nvim-tree.lua',
         requires = {
             'nvim-tree/nvim-web-devicons', -- optional
         },
-        config = function()
-            require("nvim-tree").setup {}
-        end
     }
     use {
         'VonHeikemen/lsp-zero.nvim',
