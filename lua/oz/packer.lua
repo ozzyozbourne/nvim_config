@@ -16,6 +16,11 @@ return require('packer').startup(function(use)
     use('elentok/format-on-save.nvim')
     use('0x00-ketsu/autosave.nvim')
     use('akinsho/toggleterm.nvim')
+    use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
+    use {
+        'lukas-reineke/indent-blankline.nvim',
+        require("ibl").setup {}
+    }
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.1',
         -- or                            , branch = '0.1.x',
