@@ -18,10 +18,7 @@ return require('packer').startup(function(use)
     use('akinsho/toggleterm.nvim')
     use('folke/which-key.nvim')
     use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
-    use {
-        'lukas-reineke/indent-blankline.nvim',
-        require("ibl").setup {}
-    }
+    use('lukas-reineke/indent-blankline.nvim')
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.1',
         -- or                            , branch = '0.1.x',
