@@ -1,5 +1,5 @@
 vim.keymap.set('n', [[<leader>bl]], ':BufferLinePick<CR>')
-vim.keymap.set('n', [[<leader>bc]], ':BufferLineCloseOthers')
+vim.keymap.set('n', [[<leader>bc]], vim.cmd.BufferLineCloseOthers)
 
 require("bufferline").setup {
     options = {

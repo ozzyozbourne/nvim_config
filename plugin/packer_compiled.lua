@@ -185,6 +185,11 @@ _G.packer_plugins = {
     path = "/home/ozzy/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
   },
+  treesj = {
+    loaded = true,
+    path = "/home/ozzy/.local/share/nvim/site/pack/packer/start/treesj",
+    url = "https://github.com/Wansmer/treesj"
+  },
   undotree = {
     loaded = true,
     path = "/home/ozzy/.local/share/nvim/site/pack/packer/start/undotree",

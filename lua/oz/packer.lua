@@ -7,11 +7,6 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
     use({ 'rose-pine/neovim', as = 'rose-pine' })
-    use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.1',
-        -- or                            , branch = '0.1.x',
-        requires = { { 'nvim-lua/plenary.nvim' } }
-    }
     use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     use('nvim-treesitter/playground')
@@ -21,6 +16,11 @@ return require('packer').startup(function(use)
     use('elentok/format-on-save.nvim')
     use('0x00-ketsu/autosave.nvim')
     use('akinsho/toggleterm.nvim')
+    use {
+        'nvim-telescope/telescope.nvim', tag = '0.1.1',
+        -- or                            , branch = '0.1.x',
+        requires = { { 'nvim-lua/plenary.nvim' } }
+    }
     use {
         'numToStr/Comment.nvim',
         config = function()
@@ -37,6 +37,10 @@ return require('packer').startup(function(use)
             'nvim-tree/nvim-web-devicons', -- optional
         },
     }
+    use({
+        'Wansmer/treesj',
+        requires = { 'nvim-treesitter/nvim-treesitter' },
+    })
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v2.x',
