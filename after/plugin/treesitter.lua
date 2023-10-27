@@ -32,6 +32,8 @@ require 'nvim-treesitter.configs'.setup {
         "rust",
         "haskell",
         "python",
+        "svelte",
+        "tsx",
     },
 
     sync_install = false,
