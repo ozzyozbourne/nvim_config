@@ -16,6 +16,7 @@ return require('packer').startup(function(use)
     use('0x00-ketsu/autosave.nvim')
     use('akinsho/toggleterm.nvim')
     use('folke/which-key.nvim')
+    use('folke/flash.nvim')
     use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
     use { 'NeogitOrg/neogit', requires = 'nvim-lua/plenary.nvim' }
     use('lukas-reineke/indent-blankline.nvim')
