@@ -1,10 +1,6 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
--- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-    -- Packer can manage itself
     use 'wbthomason/packer.nvim'
     use({ 'rose-pine/neovim', as = 'rose-pine' })
     use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
@@ -27,7 +23,6 @@ return require('packer').startup(function(use)
     }
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.1',
-        -- or                            , branch = '0.1.x',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
     use {
@@ -42,9 +37,7 @@ return require('packer').startup(function(use)
     }
     use {
         'nvim-tree/nvim-tree.lua',
-        requires = {
-            'nvim-tree/nvim-web-devicons', -- optional
-        },
+        requires = { 'nvim-tree/nvim-web-devicons', },
     }
     use({
         'Wansmer/treesj',
@@ -79,7 +72,7 @@ return require('packer').startup(function(use)
     })
     use({
         "kylechui/nvim-surround",
-        tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+        tag = "*",
         config = function()
             require("nvim-surround").setup({})
         end
