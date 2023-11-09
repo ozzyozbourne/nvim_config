@@ -77,4 +77,19 @@ return require('packer').startup(function(use)
             require("nvim-surround").setup({})
         end
     })
+    use {
+        "SmiteshP/nvim-navbuddy",
+        requires = {
+            "neovim/nvim-lspconfig",
+            "SmiteshP/nvim-navic",
+            "MunifTanjim/nui.nvim",
+            "numToStr/Comment.nvim",        -- Optional
+            "nvim-telescope/telescope.nvim" -- Optional
+        },
+        config = function()
+            require("nvim-navbuddy").setup {
+                lsp = { auto_attach = true }
+            }
+        end
+    }
 end)
