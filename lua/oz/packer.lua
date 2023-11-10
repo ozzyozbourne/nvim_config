@@ -1,5 +1,4 @@
 vim.cmd [[packadd packer.nvim]]
-
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
     use({ 'rose-pine/neovim', as = 'rose-pine' })
@@ -27,9 +26,7 @@ return require('packer').startup(function(use)
     }
     use {
         'numToStr/Comment.nvim',
-        config = function()
-            require('Comment').setup()
-        end
+        config = function() require('Comment').setup() end
     }
     use {
         'nvim-lualine/lualine.nvim',
@@ -46,9 +43,7 @@ return require('packer').startup(function(use)
     use {
         'goolord/alpha-nvim',
         requires = { 'nvim-tree/nvim-web-devicons' },
-        config = function()
-            require 'alpha'.setup(require 'alpha.themes.startify'.config)
-        end
+        config = function() require 'alpha'.setup(require 'alpha.themes.startify'.config) end
     }
     use {
         'VonHeikemen/lsp-zero.nvim',
@@ -64,18 +59,12 @@ return require('packer').startup(function(use)
     }
     use({
         "folke/trouble.nvim",
-        config = function()
-            require("trouble").setup {
-                icons = false,
-            }
-        end
+        config = function() require("trouble").setup { icons = false, } end
     })
     use({
         "kylechui/nvim-surround",
         tag = "*",
-        config = function()
-            require("nvim-surround").setup({})
-        end
+        config = function() require("nvim-surround").setup({}) end
     })
     use {
         "SmiteshP/nvim-navbuddy",
@@ -86,10 +75,10 @@ return require('packer').startup(function(use)
             "numToStr/Comment.nvim",        -- Optional
             "nvim-telescope/telescope.nvim" -- Optional
         },
-        config = function()
-            require("nvim-navbuddy").setup {
-                lsp = { auto_attach = true }
-            }
-        end
+        config = function() require("nvim-navbuddy").setup { lsp = { auto_attach = true } } end
+    }
+    use {
+        "VidocqH/lsp-lens.nvim",
+        config = function() require("lsp-lens").setup {} end
     }
 end)
