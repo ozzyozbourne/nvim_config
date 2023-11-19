@@ -17,6 +17,7 @@ return require('packer').startup(function(use)
     use { 'NeogitOrg/neogit', requires = 'nvim-lua/plenary.nvim' }
     use('lukas-reineke/indent-blankline.nvim')
     use('sindrets/diffview.nvim')
+    use { 'folke/zen-mode.nvim' }
     use {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v3.x",
