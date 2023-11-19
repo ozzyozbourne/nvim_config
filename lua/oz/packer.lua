@@ -6,7 +6,6 @@ return require('packer').startup(function(use)
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     use('nvim-treesitter/playground')
     use('ThePrimeagen/harpoon')
-    use('mfussenegger/nvim-dap')
     use('mbbill/undotree')
     use('elentok/format-on-save.nvim')
     use('0x00-ketsu/autosave.nvim')
@@ -14,9 +13,7 @@ return require('packer').startup(function(use)
     use('folke/which-key.nvim')
     use('folke/flash.nvim')
     use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
-    use { 'NeogitOrg/neogit', requires = 'nvim-lua/plenary.nvim' }
-    use('lukas-reineke/indent-blankline.nvim')
-    use('sindrets/diffview.nvim')
+    use { 'folke/zen-mode.nvim' }
     use {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v3.x",
@@ -26,6 +23,18 @@ return require('packer').startup(function(use)
             "MunifTanjim/nui.nvim",
             -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
         }
+    }
+    use {
+        'NeogitOrg/neogit', requires = 'nvim-lua/plenary.nvim',
+        config = function() require('neogit').setup() end
+    }
+    use {
+        'lukas-reineke/indent-blankline.nvim',
+        config = function() require('ibl').setup() end
+    }
+    use {
+        'sindrets/diffview.nvim',
+        config = function() require('diffview').setup() end
     }
     use {
         "windwp/nvim-autopairs",
