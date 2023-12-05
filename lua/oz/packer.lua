@@ -1,10 +1,5 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
--- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
-
 return require('packer').startup(function(use)
-    -- Packer can manage itself
     use 'wbthomason/packer.nvim'
     use({ 'rose-pine/neovim', as = 'rose-pine' })
     use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
@@ -18,33 +13,44 @@ return require('packer').startup(function(use)
     use('folke/which-key.nvim')
     use('folke/flash.nvim')
     use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
-    use { 'NeogitOrg/neogit', requires = 'nvim-lua/plenary.nvim' }
-    use('lukas-reineke/indent-blankline.nvim')
-    use('sindrets/diffview.nvim')
+    use { 'folke/zen-mode.nvim' }
+    use {
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v3.x",
+        requires = {
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+            "MunifTanjim/nui.nvim",
+            -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+        }
+    }
+    use {
+        'NeogitOrg/neogit', requires = 'nvim-lua/plenary.nvim',
+        config = function() require('neogit').setup() end
+    }
+    use {
+        'lukas-reineke/indent-blankline.nvim',
+        config = function() require('ibl').setup() end
+    }
+    use {
+        'sindrets/diffview.nvim',
+        config = function() require('diffview').setup() end
+    }
     use {
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
     }
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.1',
-        -- or                            , branch = '0.1.x',
+        'nvim-telescope/telescope.nvim', tag = '0.1.4',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
     use {
         'numToStr/Comment.nvim',
-        config = function()
-            require('Comment').setup()
-        end
+        config = function() require('Comment').setup() end
     }
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-    }
-    use {
-        'nvim-tree/nvim-tree.lua',
-        requires = {
-            'nvim-tree/nvim-web-devicons', -- optional
-        },
     }
     use({
         'Wansmer/treesj',
@@ -53,9 +59,7 @@ return require('packer').startup(function(use)
     use {
         'goolord/alpha-nvim',
         requires = { 'nvim-tree/nvim-web-devicons' },
-        config = function()
-            require 'alpha'.setup(require 'alpha.themes.startify'.config)
-        end
+        config = function() require 'alpha'.setup(require 'alpha.themes.startify'.config) end
     }
     use {
         'VonHeikemen/lsp-zero.nvim',
@@ -71,10 +75,26 @@ return require('packer').startup(function(use)
     }
     use({
         "folke/trouble.nvim",
-        config = function()
-            require("trouble").setup {
-                icons = false,
-            }
-        end
+        config = function() require("trouble").setup { icons = false, } end
     })
+    use({
+        "kylechui/nvim-surround",
+        tag = "*",
+        config = function() require("nvim-surround").setup({}) end
+    })
+    use {
+        "SmiteshP/nvim-navbuddy",
+        requires = {
+            "neovim/nvim-lspconfig",
+            "SmiteshP/nvim-navic",
+            "MunifTanjim/nui.nvim",
+            "numToStr/Comment.nvim",        -- Optional
+            "nvim-telescope/telescope.nvim" -- Optional
+        },
+        config = function() require("nvim-navbuddy").setup { lsp = { auto_attach = true } } end
+    }
+    use {
+        "VidocqH/lsp-lens.nvim",
+        config = function() require("lsp-lens").setup {} end
+    }
 end)
