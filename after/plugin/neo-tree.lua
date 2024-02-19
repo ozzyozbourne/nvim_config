@@ -6,6 +6,6 @@ require("neo-tree").setup({
     enable_diagnostics = true,
     window = { position = "float" },
     filesystem = {
-        follow_current_file = true,
+        follow_current_file = { enable = true, },
     },
 })
